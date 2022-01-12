@@ -1,0 +1,11 @@
+.profile__add-btn {
+  margin-left: auto;
+  align-self: center;
+  width: 150px;
+  height: 50px;
+  background-image: url(../../../images/profile/addBtn-big.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  border: 1px solid #fff;
+}
