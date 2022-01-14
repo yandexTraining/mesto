@@ -9,3 +9,17 @@
   background-color: #000;
   border: 1px solid #fff;
 }
+
+@media screen and (max-width: 1023px) {
+  .profile__add-btn {
+    background-image: url(../../../images/profile/addBtn-small.png);
+    margin-left: 0;
+    width: 282px;
+    margin-top: 36px;
+  }
+}
+
+.profile__add-btn:hover {
+  opacity: .5;
+  transition: opacity .3s;
+}

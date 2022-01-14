@@ -1,9 +1,21 @@
 .profile__name {
   margin-block: 0;
   margin-inline: 0;
+  margin: 0;
+  padding-right: 24px;
   height: 39px;
   font-weight: 500;
   font-size: 42px;
   line-height: 48px;
   color: #fff;
+}
+
+@media screen and (max-width: 1023px) {
+  .profile__name {
+    font-size: 27px;
+    line-height: 33px;
+    height: 26px;
+    padding-right: 10px;
+    padding-left: 28px;
+  }
 }
