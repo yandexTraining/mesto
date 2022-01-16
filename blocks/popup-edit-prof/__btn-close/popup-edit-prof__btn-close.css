@@ -1,0 +1,24 @@
+.popup-edit-prof__btn-close {
+  width: 32px;
+  height: 32px;
+  background-image: url(../../../images/popup/close-icon-big.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  transform: translate(238px, -38px);
+}
+
+.popup-edit-prof__btn-close:hover {
+  opacity: .5;
+  transition: opacity .3s;
+}
+
+@media screen and (max-width: 1023px) {
+  .popup-edit-prof__btn-close {
+    transform: translate(131px, -34px);
+    width: 20px;
+    height: 20px;
+    background-image: url(../../../images/popup/close-icon-small.png);
+  }
+}

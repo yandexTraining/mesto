@@ -1,0 +1,19 @@
+.popup-edit-prof__input-job {
+  margin-block: 0;
+  margin-inline: 0;
+  margin: 30px auto 0;
+  padding-bottom: 14px;
+  width: 358px;
+  height: 14px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 1023px) {
+  .popup-edit-prof__input-job {
+    width: 238px;
+    height: 14px;
+  }
+}

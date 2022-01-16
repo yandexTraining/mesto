@@ -1,7 +1,7 @@
 .elements__card-tag {
   width: 22px;
   height: 19px;
-
+  background-image: url(../../../images/elements/heart.png);
   margin-right: 5px;
   margin-left: 5px;
 }
