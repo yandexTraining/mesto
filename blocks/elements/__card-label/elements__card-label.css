@@ -1,7 +1,7 @@
 .elements__card-label {
   display: flex;
   width: 246px;
-  margin: 25px 15px 31px 21px;
+  margin: 22px 15px 31px 20px;
   justify-content: space-between;
   align-items: flex-end;
 }
