@@ -6,7 +6,6 @@
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
-@import url(../blocks/header/__line/header__line.css);
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__edit-btn/profile__edit-btn.css);
@@ -30,8 +29,7 @@
 @import url(../blocks/popup-edit-prof/popup-edit-prof.css);
 @import url(../blocks/popup-edit-prof/_opened/popup-edit-prof_opened.css);
 @import url(../blocks/popup-edit-prof/__title/popup-edit-prof__title.css);
-@import url(../blocks/popup-edit-prof/__input-job/popup-edit-prof__input-job.css);
-@import url(../blocks/popup-edit-prof/__input-name/popup-edit-prof__input-name.css);
+@import url(../blocks/popup-edit-prof/__input/popup-edit-prof__input.css);
 @import url(../blocks/popup-edit-prof/__form/popup-edit-prof__form.css);
 @import url(../blocks/popup-edit-prof/__btn-submit/popup-edit-prof__btn-submit.css);
 @import url(../blocks/popup-edit-prof/__btn-close/popup-edit-prof__btn-close.css);

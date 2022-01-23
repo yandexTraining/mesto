@@ -4,6 +4,8 @@
   background-image: url(../../../images/elements/heart.png);
   margin-right: 5px;
   margin-bottom: 4px;
+  border: 0;
+  background-color: transparent;
 }
 
 .elements__card-tag:hover {
