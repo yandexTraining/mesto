@@ -1,16 +1,17 @@
 .popup-edit-prof__btn-close {
   width: 32px;
   height: 32px;
-  background-image: url(../../../images/popup/close-icon-big.png);
+  background-image: url(../../../images/popup/close-icon-big.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
   border: none;
   transform: translate(238px, -38px);
+  cursor: pointer;
 }
 
 .popup-edit-prof__btn-close:hover {
-  opacity: .5;
+  opacity: .6;
   transition: opacity .3s;
 }
 
@@ -19,6 +20,6 @@
     transform: translate(131px, -34px);
     width: 20px;
     height: 20px;
-    background-image: url(../../../images/popup/close-icon-small.png);
+    background-image: url(../../../images/popup/close-icon-small.svg);
   }
 }

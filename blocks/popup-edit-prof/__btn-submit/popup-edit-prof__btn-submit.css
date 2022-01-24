@@ -9,10 +9,12 @@
   font-size: 18px;
   line-height: 22px;
   color: #fff;
+  cursor: pointer;
 }
 
 .popup-edit-prof__btn-submit:hover {
   opacity: .8;
+  transition: opacity .3s;
 }
 
 @media screen and (max-width: 1023px) {

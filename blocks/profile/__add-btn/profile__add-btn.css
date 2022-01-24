@@ -3,16 +3,17 @@
   align-self: center;
   width: 150px;
   height: 50px;
-  background-image: url(../../../images/profile/addBtn-big.png);
+  background-image: url(../../../images/profile/addBtn-big.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-color: #000;
   border: 1px solid #fff;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1023px) {
   .profile__add-btn {
-    background-image: url(../../../images/profile/addBtn-small.png);
+    background-image: url(../../../images/profile/addBtn-small.svg);
     margin-left: 0;
     width: 282px;
     margin-top: 33px;

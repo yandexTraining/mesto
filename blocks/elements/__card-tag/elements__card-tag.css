@@ -1,11 +1,12 @@
 .elements__card-tag {
   width: 22px;
   height: 19px;
-  background-image: url(../../../images/elements/heart.png);
+  background-image: url(../../../images/elements/heart.svg);
   margin-right: 5px;
   margin-bottom: 4px;
   border: 0;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .elements__card-tag:hover {
@@ -14,6 +15,6 @@
 }
 
 .elements__card-tag:active {
-  background-image: url(../../../images/elements/heart-black.png);
+  background-image: url(../../../images/elements/heart-black.svg);
   opacity: 1;
 }
