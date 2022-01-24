@@ -21,6 +21,6 @@
 }
 
 .profile__add-btn:hover {
-  opacity: .5;
+  opacity: .6;
   transition: opacity .3s;
 }

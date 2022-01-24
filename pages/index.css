@@ -30,6 +30,7 @@
 @import url(../blocks/popup-edit-prof/_opened/popup-edit-prof_opened.css);
 @import url(../blocks/popup-edit-prof/__title/popup-edit-prof__title.css);
 @import url(../blocks/popup-edit-prof/__input/popup-edit-prof__input.css);
+@import url(../blocks/popup-edit-prof/__container/popup-edit-prof__container.css);
 @import url(../blocks/popup-edit-prof/__form/popup-edit-prof__form.css);
 @import url(../blocks/popup-edit-prof/__btn-submit/popup-edit-prof__btn-submit.css);
 @import url(../blocks/popup-edit-prof/__btn-close/popup-edit-prof__btn-close.css);

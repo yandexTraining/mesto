@@ -1,0 +1,16 @@
+.popup-edit-prof__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 430px;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1023px) {
+  .popup-edit-prof__container {
+    width: 282px;
+  }
+}

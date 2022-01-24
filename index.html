@@ -23,7 +23,7 @@
           </div>
           <p class="profile__job">Исследователь океана</p>
         </div>
-        <button class="profile__add-btn"></button>
+        <button class="profile__add-btn" type="button"></button>
       </section>
       <section>
         <ul class="elements">
@@ -77,13 +77,15 @@
     </footer>
   </div>
   <div class="popup-edit-prof">
-    <form class="popup-edit-prof__form" name="profile-popup">
-      <button class="popup-edit-prof__btn-close" type="reset"></button>
+    <div class="popup-edit-prof__container">
+      <button class="popup-edit-prof__btn-close" type="button"></button>
       <h2 class="popup-edit-prof__title">Редактировать профиль</h2>
-      <input class="popup-edit-prof__input" id="input-name" name="name" placeholder="Имя">
-      <input class="popup-edit-prof__input" id="input-job" name="job" placeholder="Профессия">
-      <button class="popup-edit-prof__btn-submit" type="submit">Сохранить</button>
-    </form>
+      <form class="popup-edit-prof__form" name="profile-popup">
+        <input class="popup-edit-prof__input" id="input-name" name="name" placeholder="Имя">
+        <input class="popup-edit-prof__input" id="input-job" name="job" placeholder="Профессия">
+        <button class="popup-edit-prof__btn-submit" type="submit">Сохранить</button>
+      </form>
+    </div>
   </div>
   <script src="scripts/index.js"></script>
 </body>
