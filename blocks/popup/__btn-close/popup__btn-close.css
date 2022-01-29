@@ -1,4 +1,4 @@
-.popup-edit-prof__btn-close {
+.popup__btn-close {
   width: 32px;
   height: 32px;
   background-image: url(../../../images/popup/close-icon-big.svg);
@@ -10,13 +10,13 @@
   cursor: pointer;
 }
 
-.popup-edit-prof__btn-close:hover {
+.popup__btn-close:hover {
   opacity: .6;
   transition: opacity .3s;
 }
 
 @media screen and (max-width: 1023px) {
-  .popup-edit-prof__btn-close {
+  .popup__btn-close {
     transform: translate(131px, -34px);
     width: 20px;
     height: 20px;

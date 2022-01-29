@@ -27,48 +27,7 @@
       </section>
       <section>
         <ul class="elements">
-          <li class="elements__card">
-            <img class="elements__card-img" src="images/elements/karachatvsk.jpg" alt="Карачаевск">
-            <div class="elements__card-label">
-              <h2 class="elements__card-title">Карачаевск</h2>
-              <button class="elements__card-tag" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__card">
-            <img class="elements__card-img" src="images/elements/elbrus.jpg" alt="Гора Эльбрус">
-            <div class="elements__card-label">
-              <h2 class="elements__card-title">Гора Эльбрус</h2>
-              <button class="elements__card-tag" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__card">
-            <img class="elements__card-img" src="images/elements/dombay.jpg" alt="Домбай">
-            <div class="elements__card-label">
-              <h2 class="elements__card-title">Домбай</h2>
-              <button class="elements__card-tag" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__card">
-            <img class="elements__card-img" src="images/elements/elbrus.jpg" alt="Гора Эльбрус">
-            <div class="elements__card-label">
-              <h2 class="elements__card-title">Гора Эльбрус</h2>
-              <button class="elements__card-tag" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__card">
-            <img class="elements__card-img" src="images/elements/dombay.jpg" alt="Домбай">
-            <div class="elements__card-label">
-              <h2 class="elements__card-title">Домбай</h2>
-              <button class="elements__card-tag" type="button"></button>
-            </div>
-          </li>
-          <li class="elements__card">
-            <img class="elements__card-img" src="images/elements/karachatvsk.jpg" alt="Карачаево-Черкессия">
-            <div class="elements__card-label">
-              <h2 class="elements__card-title">Карачаево-Черкессия</h2>
-              <button class="elements__card-tag" type="button"></button>
-            </div>
-          </li>
+
         </ul>
       </section>
     </main>
@@ -76,18 +35,37 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup-edit-prof">
-    <div class="popup-edit-prof__container">
-      <button class="popup-edit-prof__btn-close" type="button"></button>
-      <h2 class="popup-edit-prof__title">Редактировать профиль</h2>
-      <form class="popup-edit-prof__form" name="profile-popup">
-        <input class="popup-edit-prof__input" id="input-name" name="name" placeholder="Имя">
-        <input class="popup-edit-prof__input" id="input-job" name="job" placeholder="Профессия">
-        <button class="popup-edit-prof__btn-submit" type="submit">Сохранить</button>
+  <div class="popup" id="popup-edit-prof">
+    <div class="popup__container">
+      <button class="popup__btn-close" id="popup-edit-prof-btn-close" type="button"></button>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form" name="profile-popup">
+        <input class="popup__input" id="input-name-prof" name="name-profile" placeholder="Имя">
+        <input class="popup__input" id="input-job-prof" name="job-profile" placeholder="Профессия">
+        <button class="popup__btn-submit" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
-  <script src="scripts/index.js"></script>
+  <div class="popup" id="popup-add-card">
+    <div class="popup__container">
+      <button class="popup__btn-close" id="popup-add-card-btn-close" type="button"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form class="popup__form" name="card-popup">
+        <input class="popup__input" id="input-name-card" name="name-card" placeholder="Название">
+        <input class="popup__input" id="input-pic-card" name="pic-card" placeholder="Ссылка на картинку">
+        <button class="popup__btn-submit" type="submit">Создать</button>
+      </form>
+    </div>
+  </div>
 </body>
-
+<template id="tmpl-card">
+  <li class="elements__card">
+    <img class="elements__card-img" src="" alt="">
+    <div class="elements__card-label">
+      <h2 class="elements__card-title"></h2>
+      <button class="elements__card-tag" type="button"></button>
+    </div>
+  </li>
+</template>
+<script src="scripts/index.js"></script>
 </html>
