@@ -35,9 +35,10 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup" id="popup-edit-prof">
-    <div class="popup__container">
-      <button class="popup__btn-close" id="popup-edit-prof-btn-close" type="button"></button>
+  <div class="popup popup_background_for-dialog-window" id="popup-edit-prof">
+    <div class="popup__container popup__container_background_white">
+      <button class="popup__btn-close popup__btn-close_position_for-doalog-window" id="popup-edit-prof-btn-close"
+        type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__form" name="profile-popup">
         <input class="popup__input" id="input-name-prof" name="name-profile" placeholder="Имя">
@@ -46,9 +47,10 @@
       </form>
     </div>
   </div>
-  <div class="popup" id="popup-add-card">
-    <div class="popup__container">
-      <button class="popup__btn-close" id="popup-add-card-btn-close" type="button"></button>
+  <div class="popup popup_background_for-dialog-window" id="popup-add-card">
+    <div class="popup__container popup__container_background_white">
+      <button class="popup__btn-close popup__btn-close_position_for-doalog-window" id="popup-add-card-btn-close"
+        type="button"></button>
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__form" name="card-popup">
         <input class="popup__input" id="input-name-card" name="name-card" placeholder="Название">
@@ -57,10 +59,19 @@
       </form>
     </div>
   </div>
+  <div class="popup popup_background_for-enlarge-card" id="popup-card-enlarge">
+    <figure class="popup__container popup__container_background_no">
+      <button class="popup__btn-close popup__btn-close_position_for-enlarged-card" id="popup-card-enlarge-btn-close"
+        type="button"></button>
+      <img class="popup__large-image" src="" alt="">
+      <figcaption class="popup__card-img-caption">Подпись к картинке</figcaption>
+    </figure>
+  </div>
 </body>
 <template id="tmpl-card">
   <li class="elements__card">
     <img class="elements__card-img" src="" alt="">
+    <button class="elements__trash" id="card-remove-btn" type="button"></button>
     <div class="elements__card-label">
       <h2 class="elements__card-title"></h2>
       <button class="elements__card-tag" type="button"></button>
@@ -68,4 +79,5 @@
   </li>
 </template>
 <script src="scripts/index.js"></script>
+
 </html>

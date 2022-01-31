@@ -28,39 +28,35 @@ const initialCards = [
 
 
 // Определение переменных
-let profilePopup = document.querySelector('#popup-edit-prof');
-let profilePopupOpenBtn = document.querySelector('.profile__edit-btn');
-let profilePopupCloseBtn = document.querySelector('#popup-edit-prof-btn-close');
-let profilePopupInputName = document.getElementById('input-name-prof');
-let profilePopupInputJob = document.getElementById('input-job-prof');
-let profileName = document.querySelector('.profile__name');
-let profileJob = document.querySelector('.profile__job');
-let cardPopup = document.querySelector('#popup-add-card');
-let cardPopupOpenBtn = document.querySelector('.profile__add-btn');
-let cardPopupCloseBtn = document.querySelector('#popup-add-card-btn-close');
-let cardPopupInputName = document.getElementById('input-name-card');
-let cardPopupInputPic = document.getElementById('input-pic-card');
-
-
-
-// Стартовая загрузка карточек из массива
-initialCards.forEach((card) => {
-  funcNewCardCreation(card.name, card.link);
-});
-
-
-
-// Обработчики событий
-profilePopupOpenBtn.addEventListener('click', funcProfilePopupOpen);
-profilePopupCloseBtn.addEventListener('click', funcProfilePopupClose);
-profilePopup.addEventListener('submit', funcProfilePopupSubmit);
-cardPopupOpenBtn.addEventListener('click', funcCardPopupOpen);
-cardPopupCloseBtn.addEventListener('click', funcCardPopupClose);
-cardPopup.addEventListener('submit', funcCardPopupSubmit);
-
+const profilePopup = document.querySelector('#popup-edit-prof');
+const profilePopupOpenBtn = document.querySelector('.profile__edit-btn');
+const profilePopupCloseBtn = document.querySelector('#popup-edit-prof-btn-close');
+const profilePopupInputName = document.getElementById('input-name-prof');
+const profilePopupInputJob = document.getElementById('input-job-prof');
+const profileName = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__job');
+const cardList = document.querySelector('.elements');
+const cardPopup = document.querySelector('#popup-add-card');
+const cardPopupOpenBtn = document.querySelector('.profile__add-btn');
+const cardPopupCloseBtn = document.querySelector('#popup-add-card-btn-close');
+const cardPopupInputName = document.getElementById('input-name-card');
+const cardPopupInputPic = document.getElementById('input-pic-card');
+const cardRemoveBtn = document.querySelector('.elements__trash');
+const enlargeCardPopup = document.querySelector('#popup-card-enlarge');
+const enlargeCardPopupCloseBtn = document.querySelector('#popup-card-enlarge-btn-close');
+const enlargeCardPopupImg = document.querySelector('.popup__large-image');
+const enlargeCardPopupCapture = document.querySelector('.popup__card-img-caption');
 
 
 // Определение функций
+function funcCardRemove(event) {
+  event.target.closest('.elements__card').remove();
+}
+
+function funcCardLike(event) {
+  event.target.classList.toggle('elements__card-tag_active');
+}
+
 function funcCardPopupOpen() {
   cardPopup.classList.add('popup_opened');
 }
@@ -71,17 +67,37 @@ function funcCardPopupClose() {
 
 function funcCardPopupSubmit(evt) {
   evt.preventDefault();
-  funcNewCardCreation(cardPopupInputName.value, cardPopupInputPic.value); // передали функции значения первого и второго инпутов попапа
+  const newCard = funcNewCardCreation(cardPopupInputName.value, cardPopupInputPic.value); // передали функции значения первого и второго инпутов попапа
+  cardList.prepend(newCard); // добавили новую карточку в начало списка
   funcCardPopupClose();
 }
 
 function funcNewCardCreation(cardTitle, cardPicLink) {
   const cardTmpl = document.getElementById('tmpl-card').content; // content - берет только внутренности темплэйта
-  const cardList = document.querySelector('.elements'); // список в который будем добавлять новые карточки
   const newCard = cardTmpl.querySelector('.elements__card').cloneNode(true); // клонировали шаблон карточки в переменную
   newCard.querySelector('.elements__card-title').textContent = cardTitle; // заполнили название
   newCard.querySelector('.elements__card-img').src = cardPicLink; // записали линк
-  cardList.prepend(newCard); // добавили новую карточку в начало списка
+
+  newCard.querySelector('.elements__trash').addEventListener('click', funcCardRemove);
+  newCard.querySelector('.elements__card-tag').addEventListener('click', funcCardLike);
+  newCard.querySelector('.elements__card-img').addEventListener('click', funcCardEnlarge);
+  return newCard;
+}
+
+function funcAddListener(newCard) {
+  newCard.querySelector('.elements__trash').addEventListener('click', funcCardRemove);
+  newCard.querySelector('.elements__card-tag').addEventListener('click', funcCardLike);
+  newCard.querySelector('.elements__card-img').addEventListener('click', funcCardEnlarge);
+}
+
+function funcCardEnlarge(event) {
+  enlargeCardPopupImg.src = event.target.src;
+  enlargeCardPopupCapture.textContent = event.target.parentNode.querySelector('.elements__card-title').textContent;
+  enlargeCardPopup.classList.add('popup_opened');
+}
+
+function funcEnlargeCardPopupClose() {
+  enlargeCardPopup.classList.remove('popup_opened');
 }
 
 function funcProfilePopupOpen() {
@@ -100,3 +116,20 @@ function funcProfilePopupSubmit(evt) {
   profileJob.textContent = profilePopupInputJob.value;
   funcProfilePopupClose();
 }
+
+
+// Стартовая загрузка карточек из массива
+initialCards.forEach((card) => {
+  const newCard = funcNewCardCreation(card.name, card.link);
+  cardList.prepend(newCard);
+});
+
+
+// Обработчики событий
+profilePopupOpenBtn.addEventListener('click', funcProfilePopupOpen);
+profilePopupCloseBtn.addEventListener('click', funcProfilePopupClose);
+profilePopup.addEventListener('submit', funcProfilePopupSubmit);
+cardPopupOpenBtn.addEventListener('click', funcCardPopupOpen);
+cardPopupCloseBtn.addEventListener('click', funcCardPopupClose);
+cardPopup.addEventListener('submit', funcCardPopupSubmit);
+enlargeCardPopupCloseBtn.addEventListener('click', funcEnlargeCardPopupClose);

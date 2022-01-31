@@ -6,7 +6,6 @@
   background-position: center;
   background-color: transparent;
   border: none;
-  transform: translate(238px, -38px);
   cursor: pointer;
 }
 
@@ -17,7 +16,6 @@
 
 @media screen and (max-width: 1023px) {
   .popup__btn-close {
-    transform: translate(131px, -34px);
     width: 20px;
     height: 20px;
     background-image: url(../../../images/popup/close-icon-small.svg);

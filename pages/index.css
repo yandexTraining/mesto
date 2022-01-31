@@ -21,7 +21,9 @@
 @import url(../blocks/elements/__card-img/elements__card-img.css);
 @import url(../blocks/elements/__card-label/elements__card-label.css);
 @import url(../blocks/elements/__card-tag/elements__card-tag.css);
+@import url(../blocks/elements/__card-tag/elements__card-tag_active.css);
 @import url(../blocks/elements/__card-title/elements__card-tite.css);
+@import url(../blocks/elements/__trash/elements__trash.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
@@ -34,6 +36,17 @@
 @import url(../blocks/popup/__btn-submit/popup__btn-submit.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__container/_background/popup__container_background_no.css);
+@import url(../blocks/popup/__container/_background/popup__container_background_white.css);
+@import url(../blocks/popup/__large-image/popup__large-image.css);
+@import url(../blocks/popup/__card-img-caption/popup__card-img-caption.css);
+@import url(../blocks/popup/__btn-close/_position_for-dialog-window/popup__btn-close_position_for-doalog-window.css);
+@import url(../blocks/popup/__btn-close/_position_for-enlarged-card/popup__btn-close_position_for-enlarged-card.css);
+@import url(../blocks/popup/_background/popup_background_for-dialog-window.css);
+@import url(../blocks/popup/_background/popup_background_for-enlarge-card.css);
+
+
+
 
 
 

@@ -1,4 +1,5 @@
 .elements__card {
+  position: relative;
   width: 282px;
   background-color: #fff;
   box-sizing: border-box;
