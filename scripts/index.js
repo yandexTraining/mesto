@@ -49,6 +49,40 @@ const enlargeCardPopupCapture = document.querySelector('.popup__card-img-caption
 
 
 // Определение функций
+function funcOpenPopup(popup) {
+  popup.classList.add('popup_opened');
+}
+
+function funcClosePopup(popup) {
+  popup.classList.remove('popup_opened');
+}
+
+function funcProfilePopupSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = profilePopupInputName.value;
+  profileJob.textContent = profilePopupInputJob.value;
+  funcClosePopup(profilePopup);
+}
+
+function funcCardPopupSubmit(evt) {
+  evt.preventDefault();
+  const newCard = funcNewCardCreation(cardPopupInputName.value, cardPopupInputPic.value); // передали функции значения первого и второго инпутов попапа
+  funcPrependObject(cardList, newCard); // добавили новую карточку в начало списка
+  funcClosePopup(cardPopup);
+}
+
+function funcNewCardCreation(cardTitle, cardPicLink) {
+  const cardTmpl = document.getElementById('tmpl-card').content; // content - берет только внутренности темплэйта
+  const newCard = cardTmpl.querySelector('.elements__card').cloneNode(true); // клонировали шаблон карточки в переменную
+  newCard.querySelector('.elements__card-title').textContent = cardTitle; // заполнили название
+  newCard.querySelector('.elements__card-img').alt = cardTitle; // alt пусть будет такой же как название картинки
+  newCard.querySelector('.elements__card-img').src = cardPicLink; // записали линк
+  newCard.querySelector('.elements__trash').addEventListener('click', funcCardRemove);
+  newCard.querySelector('.elements__card-tag').addEventListener('click', funcCardLike);
+  newCard.querySelector('.elements__card-img').addEventListener('click', funcCardEnlarge);
+  return newCard;
+}
+
 function funcCardRemove(event) {
   event.target.closest('.elements__card').remove();
 }
@@ -57,79 +91,55 @@ function funcCardLike(event) {
   event.target.classList.toggle('elements__card-tag_active');
 }
 
-function funcCardPopupOpen() {
-  cardPopup.classList.add('popup_opened');
-}
-
-function funcCardPopupClose() {
-  cardPopup.classList.remove('popup_opened');
-}
-
-function funcCardPopupSubmit(evt) {
-  evt.preventDefault();
-  const newCard = funcNewCardCreation(cardPopupInputName.value, cardPopupInputPic.value); // передали функции значения первого и второго инпутов попапа
-  cardList.prepend(newCard); // добавили новую карточку в начало списка
-  funcCardPopupClose();
-}
-
-function funcNewCardCreation(cardTitle, cardPicLink) {
-  const cardTmpl = document.getElementById('tmpl-card').content; // content - берет только внутренности темплэйта
-  const newCard = cardTmpl.querySelector('.elements__card').cloneNode(true); // клонировали шаблон карточки в переменную
-  newCard.querySelector('.elements__card-title').textContent = cardTitle; // заполнили название
-  newCard.querySelector('.elements__card-img').src = cardPicLink; // записали линк
-
-  newCard.querySelector('.elements__trash').addEventListener('click', funcCardRemove);
-  newCard.querySelector('.elements__card-tag').addEventListener('click', funcCardLike);
-  newCard.querySelector('.elements__card-img').addEventListener('click', funcCardEnlarge);
-  return newCard;
-}
-
-function funcAddListener(newCard) {
-  newCard.querySelector('.elements__trash').addEventListener('click', funcCardRemove);
-  newCard.querySelector('.elements__card-tag').addEventListener('click', funcCardLike);
-  newCard.querySelector('.elements__card-img').addEventListener('click', funcCardEnlarge);
-}
-
 function funcCardEnlarge(event) {
-  enlargeCardPopupImg.src = event.target.src;
   enlargeCardPopupCapture.textContent = event.target.parentNode.querySelector('.elements__card-title').textContent;
-  enlargeCardPopup.classList.add('popup_opened');
+  enlargeCardPopupImg.alt = event.target.alt;
+  enlargeCardPopupImg.src = event.target.src;
+  funcOpenPopup(enlargeCardPopup);
 }
 
-function funcEnlargeCardPopupClose() {
-  enlargeCardPopup.classList.remove('popup_opened');
+function funcPrependObject(placeInHtml, object) {
+  placeInHtml.prepend(object);
 }
-
-function funcProfilePopupOpen() {
-  profilePopup.classList.add('popup_opened');
-  profilePopupInputName.value = profileName.textContent;
-  profilePopupInputJob.value = profileJob.textContent;
-}
-
-function funcProfilePopupClose() {
-  profilePopup.classList.remove('popup_opened');
-}
-
-function funcProfilePopupSubmit(evt) {
-  evt.preventDefault();
-  profileName.textContent = profilePopupInputName.value;
-  profileJob.textContent = profilePopupInputJob.value;
-  funcProfilePopupClose();
-}
+////////////////////////////////////////////////////////////
 
 
 // Стартовая загрузка карточек из массива
 initialCards.forEach((card) => {
   const newCard = funcNewCardCreation(card.name, card.link);
-  cardList.prepend(newCard);
+  funcPrependObject(cardList, newCard);
 });
+/////////////////////////////////////////////////////////////
 
 
 // Обработчики событий
-profilePopupOpenBtn.addEventListener('click', funcProfilePopupOpen);
-profilePopupCloseBtn.addEventListener('click', funcProfilePopupClose);
+profilePopupOpenBtn.addEventListener('click', function () {
+  profilePopupInputName.value = profileName.textContent;
+  profilePopupInputJob.value = profileJob.textContent;
+  funcOpenPopup(profilePopup);
+}); // Попап редактирования профиля. Сначала заносим данные в поля инпутов и потом открывыем попап профиля.
+
+cardPopupOpenBtn.addEventListener('click', function () {
+  cardPopupInputName.value = '';
+  cardPopupInputPic.value = '';
+  funcOpenPopup(cardPopup);
+}); // Попап добавления карточки. Сначала очищаем поля инпутов и потом открываем попап.
+
+
+profilePopupCloseBtn.addEventListener('click', function () {
+  funcClosePopup(profilePopup);
+});
+
+cardPopupCloseBtn.addEventListener('click', function () {
+  funcClosePopup(cardPopup);
+});
+
+enlargeCardPopupCloseBtn.addEventListener('click', function () {
+  funcClosePopup(enlargeCardPopup);
+});
+
 profilePopup.addEventListener('submit', funcProfilePopupSubmit);
-cardPopupOpenBtn.addEventListener('click', funcCardPopupOpen);
-cardPopupCloseBtn.addEventListener('click', funcCardPopupClose);
+
 cardPopup.addEventListener('submit', funcCardPopupSubmit);
-enlargeCardPopupCloseBtn.addEventListener('click', funcEnlargeCardPopupClose);
+
+

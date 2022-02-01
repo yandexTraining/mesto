@@ -1,9 +1,9 @@
 .popup__btn-close_position_for-doalog-window {
-  translate: 238px -38px;
+  transform: translate(238px, -38px);
 }
 
 @media screen and (max-width: 1023px) {
   .popup__btn-close_position_for-doalog-window {
-    translate: 131px -34px;
+    transform: translate(131px, -34px);
   }
 }

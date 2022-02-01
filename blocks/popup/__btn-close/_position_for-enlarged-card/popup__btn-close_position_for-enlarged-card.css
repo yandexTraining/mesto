@@ -1,9 +1,9 @@
 .popup__btn-close_position_for-enlarged-card {
-  translate: 38px -6px;
+  transform: translate(38px, -6px);
 }
 
 @media screen and (max-width: 1023px) {
   .popup__btn-close_position_for-enlarged-card {
-    translate: 0 -14px;
+    transform: translate(0, -14px);
   }
 }
