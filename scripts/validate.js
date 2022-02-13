@@ -3,7 +3,7 @@ const conf = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__btn-submit',
-  inactiveButtonClass: 'popup__input-error-submit_active',
+  inactiveButtonClass: 'popup__input-error_submit_active',
   inputErrorClass: 'popup__input-error-field',
   errorClass: 'popup__input-error_text'
 };
