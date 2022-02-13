@@ -71,16 +71,18 @@ function closeByESC(evt) {
 }
 
 // Функция закрытия попапа по клику на оверлее
-function closeByClick() {
+function closeByClick(evt) {
   const popup = document.querySelector('.popup_opened');
-  closePopup(popup);
+  if (evt.target === evt.currentTarget) {
+    closePopup(popup);
+}
 }
 
 // Функция закрытия попапа по крестику
 function closePopup(popup) {
   const form = popup.querySelector('.popup__form');
   popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', closeByClick);
+  document.removeEventListener('keydown', closeByESC);
   popup.removeEventListener('click', closeByClick);
   form.reset();
 }
