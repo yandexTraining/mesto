@@ -44,6 +44,9 @@
 @import url(../blocks/popup/__btn-close/_position_for-enlarged-card/popup__btn-close_position_for-enlarged-card.css);
 @import url(../blocks/popup/_background/popup_background_for-dialog-window.css);
 @import url(../blocks/popup/_background/popup_background_for-enlarge-card.css);
+@import url(../blocks/popup/__input-error-submit/popup__input-error-submit_active.css);
+@import url(../blocks/popup/__input-error-text/popup__input-error-text.css);
+@import url(../blocks/popup/__input-error-field/popup__input-error-field.css);
 
 
 
