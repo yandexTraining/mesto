@@ -53,6 +53,7 @@ const cardList = document.querySelector('.elements');
 
 // Кнопка редактирования профиля
 btnOpenProf.addEventListener('click', () => {
+  formProf.reset();
   inpNameProf.value = profName.textContent;
   inpJobProf.value = profJob.textContent;
   openPopup(popupProf);
@@ -60,7 +61,6 @@ btnOpenProf.addEventListener('click', () => {
 
 // Кнопка закрытия попапа профиля
 btnCloseProf.addEventListener('click', () => {
-  formProf.reset();
   closePopup(popupProf);
 });
 
@@ -69,12 +69,12 @@ formProf.addEventListener('submit', (evt) => {
   evt.preventDefault();
   profName.textContent = inpNameProf.value;
   profJob.textContent = inpJobProf.value;
-  formProf.reset();
   closePopup(popupProf);
 });
 
 // Кнопка добавления новой карточки
 btnOpenCard.addEventListener('click', () => {
+  formCard.reset();
   inpTitleCard.value = '';
   inpLinkCard.value = '';
   openPopup(popupCard);
@@ -82,7 +82,6 @@ btnOpenCard.addEventListener('click', () => {
 
 // Кнопка закрытия попапа добавления карточки
 btnCloseCard.addEventListener('click', () => {
-  formCard.reset();
   closePopup(popupCard);
 });
 
@@ -91,7 +90,6 @@ formCard.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const newCard = createNewCard(inpTitleCard.value, inpLinkCard.value);
   prependCard(newCard);
-  formCard.reset();
   closePopup(popupCard);
 });
 
@@ -154,7 +152,6 @@ function openPopup(popup) {
 function closeByESC(evt) {
   if (evt.key === 'Escape') {
     const popup = document.querySelector('.popup_opened');
-    isForm(popup);
     closePopup(popup);
   };
 };
@@ -163,18 +160,9 @@ function closeByESC(evt) {
 function closeByClick(evt) {
   if (evt.target === evt.currentTarget) {
     const popup = document.querySelector('.popup_opened');
-    isForm(popup);
     closePopup(popup);
   };
 };
-
-// Функция нахождения и сброса формы попапа
-function isForm(popup) {
-  const form = popup.querySelector('.popup__form');
-  if (form) {
-    form.reset();
-  };
-}
 
 // Стартовая загрузка карточек
 initialCards.forEach((card) => {
