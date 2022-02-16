@@ -18,12 +18,12 @@
         <img class="profile__avatar" src="images/profile/avatar-img.jpg" alt="автар в профиле">
         <div class="profile__info">
           <div class="profile__title">
-            <h1 class="profile__name prof-name-mark">Жак-Ив Кусто</h1>
-            <button class="profile__edit-btn btn-open-prof-mark" type="button"></button>
+            <h1 class="profile__name profile__name_mark">Жак-Ив Кусто</h1>
+            <button class="profile__edit-btn profile__edit-btn_mark" type="button"></button>
           </div>
-          <p class="profile__job prof-job-mark">Исследователь океана</p>
+          <p class="profile__job profile__job_mark">Исследователь океана</p>
         </div>
-        <button class="profile__add-btn btn-open-card-mark" type="button"></button>
+        <button class="profile__add-btn profile__add-btn_mark" type="button"></button>
       </section>
       <section>
         <ul class="elements">
@@ -34,40 +34,40 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup popup_background_for-dialog-window popup-prof-mark">
+  <div class="popup popup_background_for-dialog-window popup_prof-mark">
     <div class="popup__container popup__container_background_white">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form form-prof-mark" novalidate>
-        <button class="popup__btn-close popup__btn-close_position_for-doalog-window btn-close-prof-mark"
+      <form class="popup__form popup__form_prof-mark" novalidate>
+        <button class="popup__btn-close popup__btn-close_position_for-doalog-window popup__btn-close_prof-mark"
           type="button"></button>
-        <input class="popup__input input-name-prof-mark" type="text" placeholder="Имя" minlength="2" maxlength="40"
+        <input class="popup__input popup__input_name-prof-mark" type="text" placeholder="Имя" minlength="2" maxlength="40"
           required>
-        <span class="popup__input-error-text input-name-prof-error"></span>
-        <input class="popup__input input-job-prof-mark" type="text" placeholder="Профессия" minlength="2"
+        <span class="popup__input-error-text"></span>
+        <input class="popup__input popup__input_job-prof-mark" type="text" placeholder="Профессия" minlength="2"
           maxlength="200" required>
-        <span class="popup__input-error-text input-job-prof-error"></span>
+        <span class="popup__input-error-text"></span>
         <button class="popup__btn-submit popup__input-error-submit" type="submit" disabled="true">Сохранить</button>
       </form>
     </div>
   </div>
-  <div class="popup popup_background_for-dialog-window popup-card-mark">
+  <div class="popup popup_background_for-dialog-window popup_card-mark">
     <div class="popup__container popup__container_background_white">
       <h2 class="popup__title">Новое место</h2>
-      <form class="popup__form form-card-mark" novalidate>
-        <button class="popup__btn-close popup__btn-close_position_for-doalog-window btn-close-card-mark"
+      <form class="popup__form popup__form_card-mark" novalidate>
+        <button class="popup__btn-close popup__btn-close_position_for-doalog-window popup__btn-close_card-mark"
           type="button"></button>
-        <input class="popup__input input-title-card-mark" type="text" placeholder="Название" minlength="2"
+        <input class="popup__input popup__input_title-card-mark" type="text" placeholder="Название" minlength="2"
           maxlength="30" required>
-        <span class="popup__input-error-text input-name-card-error"></span>
+        <span class="popup__input-error-text"></span>
         <input class="popup__input input-link-card-mark" type="url" placeholder="Ссылка на картинку" required>
-        <span class="popup__input-error-text input-pic-card-error"></span>
+        <span class="popup__input-error-text"></span>
         <button class="popup__btn-submit popup__input-error-submit" type="submit" disabled="true">Создать</button>
       </form>
     </div>
   </div>
-  <div class="popup popup_background_for-enlarge-card popup-enlarge-mark">
+  <div class="popup popup_background_for-enlarge-card popup_enlarge-mark">
     <figure class="popup__container popup__container_background_no">
-      <button class="popup__btn-close popup__btn-close_position_for-enlarged-card btn-close-enlarge-mark"
+      <button class="popup__btn-close popup__btn-close_position_for-enlarged-card popup__btn-close_enlarge-mark"
         type="button"></button>
       <img class="popup__large-image" src="#" alt="Фотография места">
       <figcaption class="popup__card-img-caption">Подпись к картинке</figcaption>
@@ -82,7 +82,7 @@
     </div>
     <button class="elements__trash" type="button"></button>
     <div class="elements__card-label">
-      <h2 class="elements__card-title card-title-mark"></h2>
+      <h2 class="elements__card-title elements__card-title_mark"></h2>
       <button class="elements__card-tag" type="button"></button>
     </div>
   </li>

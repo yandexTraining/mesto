@@ -28,25 +28,25 @@ const initialCards = [
 
 
 // Описание переменных
-const btnOpenProf = document.querySelector('.btn-open-prof-mark');
-const btnCloseProf = document.querySelector('.btn-close-prof-mark');
-const formProf = document.querySelector('.form-prof-mark');
-const btnOpenCard = document.querySelector('.btn-open-card-mark');
-const btnCloseCard = document.querySelector('.btn-close-card-mark');
-const formCard = document.querySelector('.form-card-mark');
-const popupProf = document.querySelector('.popup-prof-mark');
-const popupCard = document.querySelector('.popup-card-mark');
+const btnOpenProf = document.querySelector('.profile__edit-btn_mark');
+const btnCloseProf = document.querySelector('.popup__btn-close_prof-mark');
+const formProf = document.querySelector('.popup__form_prof-mark');
+const btnOpenCard = document.querySelector('.profile__add-btn_mark');
+const btnCloseCard = document.querySelector('.popup__btn-close_card-mark');
+const formCard = document.querySelector('.popup__form_card-mark');
+const popupProf = document.querySelector('.popup_prof-mark');
+const popupCard = document.querySelector('.popup_card-mark');
 const figCaption = document.querySelector('.popup__card-img-caption');
 const imgLarge = document.querySelector('.popup__large-image');
-const popupPic = document.querySelector('.popup-enlarge-mark');
-const btnClosePic = document.querySelector('.btn-close-enlarge-mark');
-const inpNameProf = document.querySelector('.input-name-prof-mark');
-const inpJobProf = document.querySelector('.input-job-prof-mark');
-const inpTitleCard = document.querySelector('.input-title-card-mark');
+const popupPic = document.querySelector('.popup_enlarge-mark');
+const btnClosePic = document.querySelector('.popup__btn-close_enlarge-mark');
+const inpNameProf = document.querySelector('.popup__input_name-prof-mark');
+const inpJobProf = document.querySelector('.popup__input_job-prof-mark');
+const inpTitleCard = document.querySelector('.popup__input_title-card-mark');
 const inpLinkCard = document.querySelector('.input-link-card-mark');
-const profName = document.querySelector('.prof-name-mark');
-const profJob = document.querySelector('.prof-job-mark');
-const cardTitle = document.querySelector('.card-title-mark');
+const profName = document.querySelector('.profile__name_mark');
+const profJob = document.querySelector('.profile__job_mark');
+const cardTitle = document.querySelector('.elements__card-title_mark');
 const cardLink = document.querySelector('.card-link-mark');
 const cardList = document.querySelector('.elements');
 
@@ -91,6 +91,7 @@ formCard.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const newCard = createNewCard(inpTitleCard.value, inpLinkCard.value);
   prependCard(newCard);
+  formCard.reset();
   closePopup(popupCard);
 });
 
@@ -124,7 +125,7 @@ function likeCard(evt) {
 
 // Функция открытия попапа картинки
 function enlargePic(evt) {
-  figCaption.textContent = evt.target.parentNode.querySelector('.elements__card-title').textContent;
+  figCaption.textContent = evt.target.closest('.elements__card').querySelector('.elements__card-title').textContent;
   imgLarge.alt = evt.target.alt;
   imgLarge.src = evt.target.src;
   openPopup(popupPic);
@@ -153,10 +154,7 @@ function openPopup(popup) {
 function closeByESC(evt) {
   if (evt.key === 'Escape') {
     const popup = document.querySelector('.popup_opened');
-    const form = popup.querySelector('.popup__form');
-    if (form) {
-      form.reset();
-    };
+    isForm(popup);
     closePopup(popup);
   };
 };
@@ -165,13 +163,18 @@ function closeByESC(evt) {
 function closeByClick(evt) {
   if (evt.target === evt.currentTarget) {
     const popup = document.querySelector('.popup_opened');
-    const form = popup.querySelector('.popup__form');
-    if (form) {
-      form.reset();
-    };
+    isForm(popup);
     closePopup(popup);
   };
 };
+
+// Функция нахождения и сброса формы попапа
+function isForm(popup) {
+  const form = popup.querySelector('.popup__form');
+  if (form) {
+    form.reset();
+  };
+}
 
 // Стартовая загрузка карточек
 initialCards.forEach((card) => {
